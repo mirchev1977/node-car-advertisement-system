@@ -70,7 +70,7 @@ module.exports = function (req, res) {
 			})
 			page += '</ul>'
 			//display the form here
-			page += '<form action =  "/details/{id}/comment" method="POST">' + 
+			page += '<form action =  "/details/' + carId + '/comment" method="POST">' + 
 				'<label>Username<input type="text" name="username" /></label><br />'+
 				'<label>Comment<input type="text" name="comment" /></label><br />'+
 				'<input type="hidden" name="car-id"  value="' + carId + '"/><br />'+
