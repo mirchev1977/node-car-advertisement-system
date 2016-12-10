@@ -28,7 +28,7 @@ module.exports = function (req, res) {
 				return car.id === carId
 			})
 
-			let carToWrite = null
+			let carToWrite = 0
 
 			let page = '<!DOCTYPE html>'
 			page += '<html><head>'
@@ -71,15 +71,13 @@ module.exports = function (req, res) {
 			page += '</body>'
 			page += '</html>'
 
-			carToWrite['totalViews']++;
-
-			allCars[carToWrite['id']] = carToWrite
-
 			// write into database
 			let base = ''
 			let readStream = fs.createReadStream('database.json')
 			readStream.on('data', (data) => {base += data})
 			readStream.on('end', () => {
+				carToWrite['totalViews']++;
+				allCars[carToWrite['id']] = carToWrite
 				let dt1 = JSON.parse(base)
 				dt1.cars = allCars
 				let json = JSON.stringify(dt1)
