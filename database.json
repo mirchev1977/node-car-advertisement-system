@@ -1,3 +1,6 @@
-{"counter":3,"cars":[{"make":"seven","model":"eight","price":"359","id":0,"isDeleted":false,"createdOn":1481360497360},
-	{"make":"eight","model":"eight","price":"359","id":1,"isDeleted":false,"createdOn":1481360503424},
-	{"make":"nine","model":"eight","price":"359","id":2,"isDeleted":false,"createdOn":1481360509084}]}
+{"counter":4,"cars":[
+	{"make":"one","model":"one","price":"25","id":0,
+	"isDeleted":true,"createdOn":1481361416346,"totalViews":0},
+
+	{"make":"two","model":"two","price":"26","id":1,"isDeleted":false,"createdOn":1481361424206,"totalViews":0},{"make":"three","model":"three","price":"27","id":2,"isDeleted":false,"createdOn":1481361433807,"totalViews":0},
+	{"make":"kiro","model":"kiro","price":"14","id":3,"isDeleted":false,"createdOn":1481361692597,"totalViews":0}]}

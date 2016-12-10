@@ -45,6 +45,7 @@ module.exports = function (req, res) {
 					parsedBody.isDeleted = false
 					let date = new Date()
 					parsedBody.createdOn = date.getTime()
+					parsedBody.totalViews = 0
 					dt.cars.push(parsedBody)
 					dt.counter++;
 					let json = JSON.stringify(dt)
