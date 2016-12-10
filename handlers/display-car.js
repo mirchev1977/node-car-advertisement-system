@@ -77,24 +77,28 @@ module.exports = function (req, res) {
 				'<input type="submit" />'+
 			'</form>'
 
-			let currentCar = cars[0]
-			if(currentCar.hasOwnProperty('comments') && typeof currentCar.comments !== 'undefined'){
-				page += '<br></br><h1>Comments...</h1>'
-				page += '<ul>'
-				currentCar.comments.forEach(function(comment){
-					let liCont = ''
-					page += '<li style="border: solid 1px black">'
-					for(let key in comment){
-						if(key === 'time'){
-							liCont += '<p>' + key + ': ' + new Date(comment[key]) + '</p>'
-						} else {
-							liCont += '<p>' + key + ': ' + comment[key] + '</p>'
-						}
+			if (cars.length > 0) {
+				let currentCar = cars[0]
+				if (typeof currentCar !== 'undefined') {
+					if(currentCar.hasOwnProperty('comments') && typeof currentCar.comments !== 'undefined'){
+						page += '<br></br><h1>Comments...</h1>'
+						page += '<ul>'
+						currentCar.comments.forEach(function(comment){
+							let liCont = ''
+							page += '<li style="border: solid 1px black">'
+							for(let key in comment){
+								if(key === 'time'){
+									liCont += '<p>' + key + ': ' + new Date(comment[key]) + '</p>'
+								} else {
+									liCont += '<p>' + key + ': ' + comment[key] + '</p>'
+								}
+							}
+							page += liCont
+							page += '</li>'
+						})
+						page += '</ul>'
 					}
-					page += liCont
-					page += '</li>'
-				})
-				page += '</ul>'
+				}
 			}
 
 			page += '</body>'

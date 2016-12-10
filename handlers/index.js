@@ -7,6 +7,7 @@ let carView = require('./display-car')
 let deleteCar = require('./delete-car')
 let undeleteCar = require('./undelete-car')
 let addComment = require('./add-comment')
+let statistics = require('./statistics')
 
 module.exports = [
 	// favicon,
@@ -17,5 +18,6 @@ module.exports = [
 	undeleteCar,
 	carView,
 	addComment,
+	statistics,
 	staticFiles
 ]
