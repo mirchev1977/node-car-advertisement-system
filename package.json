@@ -1,0 +1,18 @@
+{
+  "name": "02-exam-2016-12",
+  "version": "1.0.0",
+  "description": "exam in node js - december 2016",
+  "engine": "6.9.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Miroslav Mirchev",
+  "license": "ISC",
+  "dependencies": {
+    "standard": "8.6.0"
+  }
+}
