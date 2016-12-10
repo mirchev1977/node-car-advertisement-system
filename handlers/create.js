@@ -26,7 +26,33 @@ module.exports = function (req, res) {
 					res.end()
 					return true
 				}
-				console.log(parsedBody)
+
+				if (isNaN(parsedBody.price)) {
+					res.writeHead(406)
+					res.write('The type of the price field should be Number')
+					res.end()
+					return true
+				}
+
+				//read data from the database and turn it from json into js objects
+				let bd = ''
+				let readStream = fs.createReadStream('database.json')
+				readStream.on('data', (data) => {bd += data})
+				readStream.on('end', () => {
+					let dt = JSON.parse(bd)
+					dt.counter = parseInt(dt.counter)
+					parsedBody.id = dt.counter;
+					dt.cars.push(parsedBody)
+					dt.counter++;
+					let json = JSON.stringify(dt)
+					fs.writeFile('database.json', json)
+
+					res.writeHead(200)
+					res.write('New Car Add created')
+					res.end()
+				})
+
+
 			})
 		}
 	} else {
