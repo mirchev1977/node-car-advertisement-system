@@ -38,7 +38,7 @@ module.exports = function (req, res) {
 			//here should be filled with the cars
 			page += '<ul>'
 			cars.forEach((car) =>{
-				if (!car['isDeleted']) {
+				// if (!car['isDeleted']) {
 					carToWrite = car
 					page += '<li '
 					let liCont = ''
@@ -64,8 +64,9 @@ module.exports = function (req, res) {
 					}
 					page += liCont
 					page += '<p><a href="/delete/' + car['id'] + '">Delete</a></p>'
+					page += '<p><a href="/undelete/' + car['id'] + '">Undelete</a></p>'
 					page += '</li>'
-				}
+				// }
 			})
 			page += '</ul>'
 			page += '</body>'
