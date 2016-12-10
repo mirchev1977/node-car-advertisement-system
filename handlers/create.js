@@ -42,6 +42,7 @@ module.exports = function (req, res) {
 					let dt = JSON.parse(bd)
 					dt.counter = parseInt(dt.counter)
 					parsedBody.id = dt.counter;
+					parsedBody.isDeleted = false
 					dt.cars.push(parsedBody)
 					dt.counter++;
 					let json = JSON.stringify(dt)

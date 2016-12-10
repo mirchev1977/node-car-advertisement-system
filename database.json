@@ -1,1 +1,2 @@
-{"counter":1,"cars":[{"make":"one","model":"two","price":"256.8","id":0}]}
+{"counter":4,"cars":[{"make":"one","model":"two","price":"256.8","id":0},{"make":"four","model":"five","price":"369.7","id":1},
+	{"make":"seven","model":"eight","price":"897","id":2},{"make":"seven","model":"eight","price":"359","id":3,"isDeleted":false}]}
