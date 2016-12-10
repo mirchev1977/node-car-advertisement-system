@@ -50,7 +50,7 @@ module.exports = function (req, res) {
 
 						if (key === 'make') {
 							liCont += '<h1>' + key + ': ' + car[key] + '</h1>'
-						} else if(key !== 'id' && key !== 'createdOn') {
+						} else if(key !== 'id' && key !== 'createdOn' && key !== 'comments') {
 							if(key === 'totalViews'){
 								liCont += '<p>' + key + ': ' + (parseInt(car[key]) + 1) + '</p>'
 							} else {
@@ -76,6 +76,26 @@ module.exports = function (req, res) {
 				'<input type="hidden" name="car-id"  value="' + carId + '"/><br />'+
 				'<input type="submit" />'+
 			'</form>'
+
+			let currentCar = cars[0]
+			if(currentCar.hasOwnProperty('comments') && typeof currentCar.comments !== 'undefined'){
+				page += '<br></br><h1>Comments...</h1>'
+				page += '<ul>'
+				currentCar.comments.forEach(function(comment){
+					let liCont = ''
+					page += '<li style="border: solid 1px black">'
+					for(let key in comment){
+						if(key === 'time'){
+							liCont += '<p>' + key + ': ' + new Date(comment[key]) + '</p>'
+						} else {
+							liCont += '<p>' + key + ': ' + comment[key] + '</p>'
+						}
+					}
+					page += liCont
+					page += '</li>'
+				})
+				page += '</ul>'
+			}
 
 			page += '</body>'
 			page += '</html>'

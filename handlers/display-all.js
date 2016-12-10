@@ -34,7 +34,7 @@ module.exports = function (req, res) {
 
 						if (key === 'make') {
 							liCont += '<h1>' + key + ': ' + car[key] + '</h1>'
-						} else if(key !== 'id' && key !== 'createdOn') {
+						} else if(key !== 'id' && key !== 'createdOn' && key !== 'comments') {
 							liCont += '<p>' + key + ': ' + car[key] + '</p>'
 						} else if(key === 'createdOn'){
 							liCont += '<p>' + key + ': ' + new Date(car[key]) + '</p>'

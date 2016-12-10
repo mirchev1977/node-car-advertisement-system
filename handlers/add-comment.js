@@ -47,7 +47,7 @@ module.exports = function (req, res) {
 		}
 
 		res.writeHead(200)
-		res.write("car with id: " + carId + " deleted")
+		res.write("added comment to car with id:  " + carId)
 		res.end()
 	} else {
 		return true
