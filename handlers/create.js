@@ -43,6 +43,8 @@ module.exports = function (req, res) {
 					dt.counter = parseInt(dt.counter)
 					parsedBody.id = dt.counter;
 					parsedBody.isDeleted = false
+					let date = new Date()
+					parsedBody.createdOn = date.getTime()
 					dt.cars.push(parsedBody)
 					dt.counter++;
 					let json = JSON.stringify(dt)
