@@ -16,7 +16,7 @@ function getContentType(url){
 module.exports = function (req, res) {
 	req.pathName = req.pathName || url.parse(req.url).pathname
 
-	fs.readFile('.' + req.pathName, (err, data) =>{
+	fs.readFile('.' + req.pathName, 'utf8', (err, data) =>{
 		if (err) {
 			res.writeHead(404)
 			res.write('404 Not Found')

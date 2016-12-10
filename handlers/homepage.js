@@ -4,7 +4,7 @@ let url = require('url')
 module.exports = function (req, res) {
 	req.pathName = req.pathName || url.parse(req.url).pathname
 	if (req.url === '/') {
-		fs.readFile('./index.html', (err, data) => {
+		fs.readFile('./index.html', 'utf8', (err, data) => {
 			if (err) {console.log(err)}
 
 			res.writeHead(200, {
