@@ -5,7 +5,7 @@ module.exports = function (req, res) {
 	req.pathName = req.pathName || url.parse(req.url).pathname
 	let intoArr = req.pathName.split('/')
 	let carId = ''
-	if (intoArr.length > 2) {
+	if (intoArr.length > 2 && intoArr.length < 4) {
 		carId = parseInt(intoArr[2])
 		req.pathName = '/details'
 	}
@@ -69,6 +69,14 @@ module.exports = function (req, res) {
 				// }
 			})
 			page += '</ul>'
+			//display the form here
+			page += '<form action =  "/details/{id}/comment" method="POST">' + 
+				'<label>Username<input type="text" name="username" /></label><br />'+
+				'<label>Comment<input type="text" name="comment" /></label><br />'+
+				'<input type="hidden" name="car-id"  value="' + carId + '"/><br />'+
+				'<input type="submit" />'+
+			'</form>'
+
 			page += '</body>'
 			page += '</html>'
 
